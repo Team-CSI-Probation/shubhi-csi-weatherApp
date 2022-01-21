@@ -1,0 +1,10 @@
+.widget{
+    margin-left: 30rem;
+    margin-top: 4rem;
+    width: 550px;
+    height: 550px;
+    border-radius: 30px;
+    background: rgb(221, 204, 204);
+    box-shadow: 42px 37px 36px #363535, 1px 3px 3px #cac4c4
+
+}
