@@ -1,14 +1,36 @@
 import React, { useEffect, useState } from 'react'
+import Content from './Content';
+import Newscard from './Newscard';
+import Temp from './Temp';
+import {Navlink} from "react-router-dom"
 
 export default function Navbar() {
 
-    const [searchValue, setSearchValue] = useState();
+    const [searchValue, setSearchValue] = useState("lucknow");
+    const [tempInfo, setTempInfo] = useState({});
     const getWeatherInfo = async () =>{
         try{
-            let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=6045dfefef9b22c91188c56d9e4df6a3`; 
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=f3e000eea3d5fffee17f187837f4c47a`; 
             let res = await fetch(url);
             let data = await res.json();
-            console.log(data);
+            
+            const {temp, humidity, pressure} = data.main;
+            const {main:weathermood} = data.weather[0];
+            const {name} = data;
+            const {speed} = data.wind;
+            const {country, sunset} = data.sys;
+
+            const myNewWeatherInfo = {
+                temp,
+                humidity,
+                pressure,
+                weathermood,
+                name,
+                speed,
+                country,
+                sunset,
+            };
+            setTempInfo(myNewWeatherInfo);
         } catch (error){
             console.log(error);
         }
@@ -50,12 +72,13 @@ export default function Navbar() {
                         
                     </ul>
                     <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Search for Cities" value={searchValue} onChange={(e) => {return (e.target.value)}} aria-label="Search"/>
+                        <input className="form-control me-2" type="search" placeholder="Search for Cities" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
                         <button className="btn btn-outline-success" type="submit" onClick={getWeatherInfo}>Search</button>
                     </form>
                     </div>
                 </div>
             </nav>
+            <Temp tempInfo={tempInfo} />
         </>
     )
 }

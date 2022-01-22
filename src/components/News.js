@@ -1,5 +1,4 @@
 export const news = [
-
     {
         id:1,
         image: "./images/1.jpg",
@@ -19,19 +18,19 @@ export const news = [
         description: "The weather stole the headlines in Florida 45 years ago with a startling feat that has not been repeated to this day.",
     },
     {
-        id:1,
+        id:4,
         image: "./images/4.jpg",
         text: "Dog coats to keep your pup protected and warm this winter",
         description: "Your dog is part of the family too, so make sure he or she has the right apparel for harsh winter weather.",
     },
     {
-        id:1,
+        id:5,
         image: "./images/5.jpg",
         text: "Our picks for indoor space heaters for working from home",
         description: "Whether you're working from home or just relaxing, these heaters will keep you warm when the weather outside is cold and nasty.",
     },
     {
-        id:1,
+        id:6,
         image: "./images/6.jpg",
         text: "Cargo ship draws crowd as it pulls up to dock encased in sea ice",
         description: "Like something out of a scene from a famous movie, a ship sailing into a Russian port after an ordeal at sea caught the attention of onlookers -- and its valuable frozen freight was unrecognizable thanks to all the ice.",

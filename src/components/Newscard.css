@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+  }
+
+  .main-card{
+    display: inline-block;
+    grid-template-columns: repeat(3, minmax(300px, 500px));
+    grid-gap: 5px;
+    justify-content: space-around;
+  }
+  .card-container {
+    margin-top: 7px; 
+    position: relative;
+    display: inline;
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  .card-body{
+      display: inline;
+  }
+  

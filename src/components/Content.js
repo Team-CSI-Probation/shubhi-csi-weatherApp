@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import { news } from './News'
 import Newscard from './Newscard';
-import Temp from './Temp';
 
 
 export default function Content() {
@@ -10,8 +9,7 @@ export default function Content() {
 
     return (
         <>
-        {/* <Newscard newsData={newsData}/> */}
-        <Temp/>
+        <Newscard newsData={newsData}/>
         </>
     )
 }
