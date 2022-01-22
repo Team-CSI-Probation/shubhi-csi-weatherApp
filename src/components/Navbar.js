@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Navbar() {
+
+    const [searchValue, setSearchValue] = useState();
+    const getWeatherInfo = async () =>{
+        try{
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=6045dfefef9b22c91188c56d9e4df6a3`; 
+            let res = await fetch(url);
+            let data = await res.json();
+            console.log(data);
+        } catch (error){
+            console.log(error);
+        }
+    };
+
+
+    useEffect(() => {getWeatherInfo();}, []);
+
     return (
-        <div>
+        
+
+        <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">WeatherApp</a>
@@ -32,12 +50,12 @@ export default function Navbar() {
                         
                     </ul>
                     <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Search for Cities" aria-label="Search"/>
-                        <button className="btn btn-outline-success" type="submit">Search</button>
+                        <input className="form-control me-2" type="search" placeholder="Search for Cities" value={searchValue} onChange={(e) => {return (e.target.value)}} aria-label="Search"/>
+                        <button className="btn btn-outline-success" type="submit" onClick={getWeatherInfo}>Search</button>
                     </form>
                     </div>
                 </div>
             </nav>
-        </div>
+        </>
     )
 }
