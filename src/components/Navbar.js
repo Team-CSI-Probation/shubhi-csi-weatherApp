@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Content from './Content';
-import Newscard from './Newscard';
 import Temp from './Temp';
-import {Navlink} from "react-router-dom"
+// import {Navlink} from "react-router-dom"
 
 export default function Navbar() {
 
-    const [searchValue, setSearchValue] = useState("lucknow");
+    const [searchValue, setSearchValue] = useState("delhi");
     const [tempInfo, setTempInfo] = useState({});
     const getWeatherInfo = async () =>{
         try{
@@ -37,7 +35,9 @@ export default function Navbar() {
     };
 
 
-    useEffect(() => {getWeatherInfo();}, []);
+    useEffect(() => 
+    {getWeatherInfo();
+    }, []);
 
     return (
         
@@ -73,7 +73,7 @@ export default function Navbar() {
                     </ul>
                     <form className="d-flex">
                         <input className="form-control me-2" type="search" placeholder="Search for Cities" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
-                        <button className="btn btn-outline-success" type="submit" onClick={getWeatherInfo}>Search</button>
+                        <button className="btn btn-outline-success" type="button" onClick={getWeatherInfo}>Search</button>
                     </form>
                     </div>
                 </div>

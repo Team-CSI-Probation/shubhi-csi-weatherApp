@@ -51,7 +51,7 @@ body {
     margin-left: 6px;
 } */
 .widget .weatherInfo .temperature {
-    flex: 0 0 50%;
+    flex: 0 0 49%;
     width: 100%;
     font-size: 65px;
     display: flex;
@@ -69,7 +69,7 @@ body {
   }
   .widget .weatherInfo .description .weatherCondition {
     text-transform: uppercase;
-    font-size: 35px;
+    font-size: 20px;
     font-weight: 100;
   }
   .widget .weatherInfo .description .place {
@@ -123,4 +123,21 @@ body {
     text-transform: capitalize;
     color: #080705;
     font-size: 15px;
+  }
+
+  @media only screen and (max-width:900px) {
+    .widget{
+      display: flex;
+    flex-wrap: wrap;
+    margin-left: 0.2rem;
+    margin-right: 0.5rem;
+    margin-top: 1rem; 
+    width: 550px;
+    height: 500px;
+    cursor: pointer;
+    border-radius: 30px;
+    background: rgb(221, 204, 204);
+    box-shadow: 42px 37px 36px #363535, 1px 3px 3px #cac4c4
+    }
+    
   }

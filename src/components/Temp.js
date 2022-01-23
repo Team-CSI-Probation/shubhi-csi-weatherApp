@@ -1,4 +1,3 @@
-// api.openweathermap.org/data/2.5/weather?q=lucknow&appid=f3e000eea3d5fffee17f187837f4c47a
 
 import React, {useState , useEffect} from 'react';
 import "./Temp.css";
@@ -35,6 +34,9 @@ export default function Temp({ tempInfo }) {
                     break;
                 case "Rain": 
                     setWeatherState("wi wi-rain");
+                    break;
+                case "Fog": 
+                    setWeatherState("wi wi-fog");
                     break;
                 default: 
                     setWeatherState("wi wi-windy");
@@ -84,8 +86,6 @@ export default function Temp({ tempInfo }) {
         </div>
 
     </article>
-
-
   </>
   )
 }
