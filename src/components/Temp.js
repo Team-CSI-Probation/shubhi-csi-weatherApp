@@ -86,6 +86,7 @@ export default function Temp({ tempInfo }) {
         </div>
 
     </article>
+
   </>
   )
 }

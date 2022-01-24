@@ -4,7 +4,7 @@ import Temp from './Temp';
 
 export default function Navbar() {
 
-    const [searchValue, setSearchValue] = useState("delhi");
+    const [searchValue, setSearchValue] = useState("new york");
     const [tempInfo, setTempInfo] = useState({});
     const getWeatherInfo = async () =>{
         try{
